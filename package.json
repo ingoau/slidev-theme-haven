@@ -1,7 +1,7 @@
 {
   "name": "slidev-theme-haven",
-  "version": "0.1.0",
-  "description": "A cosy autumn-forest Slidev theme for Hack Club Haven game jams",
+  "version": "0.1.1",
+  "description": "Slidev theme for Hack Club Haven",
   "author": "Ingo Wolf (https://github.com/ingoau)",
   "license": "MIT",
   "homepage": "https://github.com/ingoau/slidev-theme-haven#readme",
