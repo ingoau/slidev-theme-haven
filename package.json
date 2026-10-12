@@ -1,0 +1,51 @@
+{
+  "name": "slidev-theme-haven",
+  "version": "0.1.0",
+  "description": "A cosy autumn-forest Slidev theme for Hack Club Haven",
+  "keywords": [
+    "slidev-theme",
+    "slidev",
+    "hack-club",
+    "haven"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "slidev": ">=52.0.0"
+  },
+  "scripts": {
+    "dev": "slidev example.md",
+    "build": "slidev build example.md",
+    "export": "slidev export example.md",
+    "screenshot": "slidev export example.md --format png"
+  },
+  "slidev": {
+    "colorSchema": "light",
+    "defaults": {
+      "fonts": {
+        "sans": "Jua",
+        "serif": "Darumadrop One",
+        "mono": "Fira Code",
+        "local": [
+          "Jua",
+          "Darumadrop One"
+        ]
+      },
+      "transition": "slide-left"
+    }
+  },
+  "devDependencies": {
+    "@slidev/cli": "latest",
+    "playwright-chromium": "latest"
+  },
+  "files": [
+    "layouts",
+    "components",
+    "styles",
+    "assets",
+    "fonts",
+    "setup",
+    "uno.config.ts",
+    "layoutHelper.ts"
+  ]
+}

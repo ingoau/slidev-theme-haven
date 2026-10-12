@@ -1,0 +1,16 @@
+/* Latin subsets lifted from haven.hackclub.com so decks work offline */
+@font-face {
+  font-family: 'Darumadrop One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/darumadrop-one-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Jua';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/jua-latin.woff2') format('woff2');
+}

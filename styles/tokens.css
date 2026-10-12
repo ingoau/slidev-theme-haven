@@ -1,0 +1,25 @@
+/* Palette pulled straight from haven.hackclub.com's --color-haven-* tokens */
+:root {
+  --haven-green: #b8c220;
+  --haven-green-deep: #97a01a;
+  --haven-green-light: #d4dc55;
+  --haven-orange-deep: #ed5615;
+  --haven-orange-bright: #fa681b;
+  --haven-orange-mid: #fc8616;
+  --haven-yellow: #ffd059;
+  --haven-butter: #ffe382;
+  --haven-brown-dark: #b8774a;
+  --haven-brown-light: #dda47d;
+  --haven-brown-bark: #8a5232;
+  --haven-cocoa: #6b4043;
+  --haven-teal: #2cbf90;
+  --haven-cream: #fff6e6;
+  --haven-paper: #fdebd0;
+
+  --haven-font-display: 'Darumadrop One', 'Jua', ui-rounded, system-ui, sans-serif;
+  --haven-font-body: 'Jua', ui-rounded, system-ui, sans-serif;
+
+  --slidev-theme-primary: var(--haven-orange-bright);
+  --slidev-code-background: var(--haven-cream);
+  --slidev-code-radius: 14px;
+}

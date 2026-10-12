@@ -1,0 +1,20 @@
+.slidev-layout pre,
+.slidev-layout .slidev-code {
+  border-radius: 14px;
+  font-size: 0.95rem;
+}
+
+.slidev-code-wrapper,
+.slidev-layout pre.shiki {
+  border: 3px solid var(--haven-brown-light);
+  border-radius: 16px;
+  box-shadow: 0 4px 0 rgb(184 119 74 / 0.45);
+}
+
+.slidev-layout :not(pre) > code {
+  font-size: 0.85em;
+  background: var(--haven-butter);
+  color: var(--haven-brown-bark);
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+}
