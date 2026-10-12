@@ -1,8 +1,7 @@
 # slidev-theme-haven
 
 > [!NOTE]
-> This theme was generated with AI (Claude), directed and reviewed by a human. Expect rough
-> edges — issues and PRs welcome.
+> This theme was generated with AI (Claude), directed and reviewed by a human.
 
 A cosy autumn-forest [Slidev](https://sli.dev) theme for **Hack Club Haven** game jams, built from
 [haven.hackclub.com](https://haven.hackclub.com/) and the official Haven Brand Guide.
