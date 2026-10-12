@@ -33,6 +33,30 @@ I'm the official Haven hedgehog, and I'll be your guide this weekend.
 <Sticker class="mt-4">hedgehog · 13–18 · new to game dev</Sticker>
 
 ---
+layout: people
+people:
+  - name: Daven
+    pronouns: he/him
+    role: Official mascot
+    image: /photos/daven.webp
+    description: Spiky outside, soft and fuzzy inside.
+  - name: Alex Rivera
+    pronouns: they/them
+    role: Lead organiser
+    description: Ask me about anything — rooms, rules, Wi-Fi.
+  - name: Priya Shah
+    pronouns: she/her
+    role: Workshops
+    description: Running "your first platformer" on Saturday.
+  - name: Jordan Lee
+    pronouns: he/they
+    role: Food & logistics
+    description: Knows where every snack is hidden.
+---
+
+# Meet the team
+
+---
 layout: bubbles
 ---
 
@@ -52,6 +76,28 @@ kicker: Part 1
 # The weekend
 
 What's happening, when, and where to find food
+
+---
+layout: agenda
+items:
+  - time: "9:00"
+    title: Doors open
+    note: Breakfast in the main hall
+  - time: "9:30"
+    title: Opening ceremony
+    now: true
+  - time: "10:00"
+    title: Theme reveal + team forming
+  - time: "12:30"
+    title: Lunch
+  - time: "14:00"
+    title: "Workshop: your first platformer"
+    note: Bring a laptop with Godot installed
+  - time: "18:00"
+    title: Dinner + playtesting
+---
+
+# Saturday
 
 ---
 
@@ -209,12 +255,36 @@ layout: two-cols
 </div>
 
 ---
+layout: faq
+faqs:
+  - q: I've never made a game. Is that okay?
+    a: Absolutely — most people here haven't. Workshops start from zero.
+  - q: Do I need a team?
+    a: Nope. Join one at team forming, or go solo.
+  - q: What engine should I use?
+    a: Whatever you like — Godot, Unity, Scratch, PICO-8, even plain JavaScript.
+  - q: What do I submit?
+    a: A playable game on itch.io before Sunday's hard stop.
+---
+
+# Questions?
+
+---
 layout: quote
 ---
 
 > Learn something new, meet new friends, and go on an adventure together.
 
 haven.hackclub.com
+
+---
+layout: countdown
+until: 2026-11-15T14:00:00
+label: Submissions close in
+done: Pencils down! 🎉
+---
+
+Publish your game on **itch.io** before time runs out
 
 ---
 layout: center
@@ -227,6 +297,25 @@ Ready?
 <div class="text-6xl font-display text-haven-orange mt-2 mb-4">✨ ??? ✨</div>
 
 <HavenButton>Click to reveal</HavenButton>
+
+---
+layout: sponsors
+sponsors:
+  - name: Hack Club
+    tier: Presented by
+  - name: Your sponsor
+    tier: Gold
+  - name: Your sponsor
+    tier: Gold
+  - name: Local business
+    tier: Friends
+  - name: Local business
+    tier: Friends
+  - name: Local business
+    tier: Friends
+---
+
+# Thank you!
 
 ---
 layout: end

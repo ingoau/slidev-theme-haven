@@ -124,6 +124,72 @@ Forest + excited hedgehog. Frontmatter: `background`, `hedgehog: false`.
 
 ![end](docs/screenshots/end.webp)
 
+### `people`
+A grid of people on mini signboards. `image` is optional — without one you get coloured
+initials. Columns are picked automatically (override with `columns`).
+
+```yaml
+layout: people
+people:
+  - name: Alex Rivera
+    pronouns: they/them
+    role: Lead organiser
+    image: /photos/alex.webp
+    description: Ask me about anything.
+```
+
+![people](docs/screenshots/people.webp)
+
+### `agenda`
+A timeline on a signboard. `now: true` highlights the current item; more than 6 items split into
+two columns (override with `columns`).
+
+```yaml
+layout: agenda
+items:
+  - time: "9:30"
+    title: Opening ceremony
+    note: Main hall
+    now: true
+```
+
+![agenda](docs/screenshots/agenda.webp)
+
+### `countdown`
+A live countdown over the forest — handy on a second screen during the jam. Shows `done` once
+the time passes; the slide body appears underneath.
+
+```yaml
+layout: countdown
+until: 2026-11-15T14:00:00
+label: Submissions close in
+done: Pencils down! 🎉
+```
+
+![countdown](docs/screenshots/countdown.webp)
+
+### `sponsors`
+A thank-you wall grouped by tier (in the order tiers first appear; earlier tiers get bigger
+tiles). `logo` and `url` are optional — without a logo the name is shown.
+
+```yaml
+layout: sponsors
+sponsors:
+  - name: Hack Club
+    tier: Presented by
+  - name: Acme
+    logo: /sponsors/acme.svg
+    tier: Gold
+```
+
+![sponsors](docs/screenshots/sponsors.webp)
+
+### `faq`
+Question cards in the style of the site's FAQ. Frontmatter: `faqs` (list of `q`/`a`), `columns`
+(default 2), `background`.
+
+![faq](docs/screenshots/faq.webp)
+
 ## Components
 
 ```md
@@ -135,6 +201,7 @@ Forest + excited hedgehog. Frontmatter: `background`, `hedgehog: false`.
 <Polaroid src="/photos/x.webp" caption="hi" tilt="-3" max-height="10rem" />
 <Sticker tilt="-4">new!</Sticker>
 <Daven variant="peek|excited|thumbs|pixel" bottom="0" right="40px" width="160px" flip />
+<PersonCard name="Alex Rivera" pronouns="they/them" role="Lead organiser" image="/photos/alex.webp">Blurb</PersonCard>
 ```
 
 > `==mark==` syntax isn't enabled in Slidev by default — use `<mark>`.
