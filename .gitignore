@@ -6,3 +6,4 @@ dist
 .vite-inspect
 .remote-assets
 components.d.ts
+haven-demo-dist

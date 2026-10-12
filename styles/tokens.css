@@ -1,20 +1,32 @@
-/* Palette pulled straight from haven.hackclub.com's --color-haven-* tokens */
+/*
+ * Official Haven palette (Haven Brand Guide → Fonts + Colors), plus a few
+ * supporting shades lifted from haven.hackclub.com's --color-haven-* tokens.
+ */
 :root {
-  --haven-green: #b8c220;
+  /* primary */
+  --haven-lime: #b8c11f;          /* lime green */
+  --haven-carrot: #fc8616;        /* carrot orange */
+  /* secondary */
+  --haven-banana: #f9dd60;        /* banana yellow */
+  --haven-pumpkin: #e87136;       /* pumpkin orange */
+  --haven-faded: #dfa063;         /* faded orange */
+  --haven-umber: #783d2b;         /* burnt umber */
+  --haven-lucky: #a8a237;         /* lucky green */
+
+  /* site supporting shades */
+  --haven-green: var(--haven-lime);
   --haven-green-deep: #97a01a;
-  --haven-green-light: #d4dc55;
-  --haven-orange-deep: #ed5615;
-  --haven-orange-bright: #fa681b;
-  --haven-orange-mid: #fc8616;
-  --haven-yellow: #ffd059;
+  --haven-orange-deep: #ed5615;   /* site body text */
+  --haven-orange-bright: #fa681b; /* site sign-up button */
+  --haven-orange-mid: var(--haven-carrot);
+  --haven-yellow: #ffd059;        /* site highlighter */
   --haven-butter: #ffe382;
-  --haven-brown-dark: #b8774a;
-  --haven-brown-light: #dda47d;
+  --haven-brown-dark: #b8774a;    /* signboard wood */
+  --haven-brown-light: var(--haven-faded);
   --haven-brown-bark: #8a5232;
-  --haven-cocoa: #6b4043;
   --haven-teal: #2cbf90;
   --haven-cream: #fff6e6;
-  --haven-paper: #fdebd0;
+  --haven-paper: #ffe6cc;         /* notebook pages */
 
   --haven-font-display: 'Darumadrop One', 'Jua', ui-rounded, system-ui, sans-serif;
   --haven-font-body: 'Jua', ui-rounded, system-ui, sans-serif;

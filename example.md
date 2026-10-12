@@ -89,15 +89,19 @@ What's happening, when, and where to find food
 <!-- Placeholder times — swap in the real run sheet. -->
 
 ---
+layout: notebook
+heading: Here's how the weekend works
+---
 
-# How it works
+<Step n="1" title="Find a team">Teams of up to 4, or go solo.</Step>
 
-<div class="grid grid-cols-2 gap-x-12 gap-y-12 mt-10 px-4">
-  <Step n="1" title="Find a team">Teams of up to 4, or go solo — both are great.</Step>
-  <Step n="2" title="Learn something">Drop into workshops, or ask an organiser for help.</Step>
-  <Step n="3" title="Build your game">Any engine, any language. Godot, Unity, Scratch, PICO-8…</Step>
-  <Step n="4" title="Ship it">Publish on <strong>itch.io</strong> before Sunday's hard stop.</Step>
-</div>
+<Step n="2" title="Learn something">Drop into workshops or grab an organiser.</Step>
+
+::right::
+
+<Step n="3" title="Build your game">Any engine: Godot, Unity, Scratch, PICO-8…</Step>
+
+<Step n="4" title="Ship it">Publish on <strong>itch.io</strong> before the hard stop.</Step>
 
 ---
 layout: statement
@@ -123,6 +127,22 @@ New to game dev? Start here.
 - **Shipping to itch.io**
 
 <HavenButton class="mt-4" arrow>Sat 2pm · Main room</HavenButton>
+
+---
+layout: image-left
+image: /photos/food-1.webp
+caption: fuel for game devs
+---
+
+# Food & prizes
+
+Free meals all weekend, plus snacks on tap.
+
+- Breakfast, lunch & dinner Saturday
+- Breakfast & lunch Sunday
+- <mark>Prizes</mark> for the top games, voted by everyone
+
+<Sticker class="mt-3" tilt="3">dietary needs? tell an organiser!</Sticker>
 
 ---
 
