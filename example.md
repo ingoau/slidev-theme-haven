@@ -1,18 +1,18 @@
 ---
 theme: ./
-title: Haven Canberra — Opening Ceremony
+title: Haven — Opening Ceremony
 info: |
   Demo deck for slidev-theme-haven.
-  Schedule and logistics are placeholder content.
+  Swap the schedule, rooms and links for your own Haven's.
 transition: slide-left
 mdc: true
 ---
 
-# Welcome to Haven Canberra!
+# Welcome to Haven!
 
 Opening ceremony · **Nov 14–15, 2026**
 
-A weekend to make a game with friends 🎮
+A weekend to make a game with friends, in 200+ cities 🎮
 
 <!--
 Cover layout: forest backdrop, white Haven logo, peeking hedgehog.
@@ -86,7 +86,7 @@ What's happening, when, and where to find food
 </div>
 </div>
 
-<!-- Placeholder times — swap in the real run sheet. -->
+<!-- Example times — swap in your own run sheet. -->
 
 ---
 layout: notebook
@@ -126,7 +126,7 @@ New to game dev? Start here.
 - **Juice it!** screen shake, particles & sound
 - **Shipping to itch.io**
 
-<HavenButton class="mt-4" arrow>Sat 2pm · Main room</HavenButton>
+<HavenButton class="mt-4" arrow>Saturday 2pm</HavenButton>
 
 ---
 layout: image-left
@@ -202,7 +202,7 @@ layout: two-cols
 
 ### Need help?
 
-<Bubble tail="left" class="mt-2">Find an organiser in an <mark>orange lanyard</mark>, or ask in <strong>#haven-help</strong> on Slack.</Bubble>
+<Bubble tail="left" class="mt-2">Grab <mark>any organiser</mark>, or ask in <strong class="whitespace-nowrap">#haven-help</strong> on Slack.</Bubble>
 
 <div class="mt-7 px-10">
   <Polaroid src="/photos/friends-1.webp" tilt="-3" max-height="9.5rem" caption="your new friends, probably" />
@@ -236,4 +236,4 @@ layout: end
 
 Doors to the build room are open — go make something real
 
-**haven.hackclub.com/canberra**
+**haven.hackclub.com**

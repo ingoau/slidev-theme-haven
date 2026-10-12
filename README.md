@@ -150,7 +150,8 @@ From the Haven Brand Guide's social media guidelines:
 
 - Background art, logos, mascot and UI pieces come from the haven.hackclub.com site and the
   brand guide's asset folders. Photos in `public/photos` are only for the demo deck.
-- The demo's schedule, workshops and logistics are placeholder content.
+- The demo deck is a generic Haven opening ceremony; its schedule, workshops and food are
+  examples to swap for your own event's.
 - Slidev 53.0.0's own CSS breaks `slidev build`'s CSS minifier, so [vite.config.ts](vite.config.ts)
   turns CSS minification off.
 - Regenerate the screenshots with `npm run screenshot` (needs `npx playwright install chromium`).
