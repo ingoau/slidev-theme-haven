@@ -1,18 +1,39 @@
 {
   "name": "slidev-theme-haven",
   "version": "0.1.0",
-  "description": "A cosy autumn-forest Slidev theme for Hack Club Haven",
+  "description": "A cosy autumn-forest Slidev theme for Hack Club Haven game jams",
+  "author": "Ingo Wolf (https://github.com/ingoau)",
+  "license": "MIT",
+  "homepage": "https://github.com/ingoau/slidev-theme-haven#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingoau/slidev-theme-haven.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ingoau/slidev-theme-haven/issues"
+  },
   "keywords": [
     "slidev-theme",
     "slidev",
     "hack-club",
-    "haven"
+    "haven",
+    "game-jam"
   ],
-  "license": "MIT",
   "engines": {
     "node": ">=18.0.0",
-    "slidev": ">=52.0.0"
+    "slidev": ">=53.0.0"
   },
+  "files": [
+    "layouts",
+    "components",
+    "styles",
+    "assets",
+    "fonts",
+    "setup",
+    "layoutHelper.ts",
+    "uno.config.ts",
+    "vite.config.ts"
+  ],
   "scripts": {
     "dev": "slidev example.md",
     "build": "slidev build example.md",
@@ -35,17 +56,7 @@
     }
   },
   "devDependencies": {
-    "@slidev/cli": "latest",
-    "playwright-chromium": "latest"
-  },
-  "files": [
-    "layouts",
-    "components",
-    "styles",
-    "assets",
-    "fonts",
-    "setup",
-    "uno.config.ts",
-    "layoutHelper.ts"
-  ]
+    "@slidev/cli": "^53.0.0",
+    "playwright-chromium": "^1.64.0"
+  }
 }

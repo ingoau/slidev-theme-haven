@@ -688,6 +688,7 @@
   align-content: center;
   align-items: stretch;
 }
+.haven-people-grid > .haven-person { width: 100%; max-width: 17rem; justify-self: center; }
 
 /* agenda */
 .haven-agenda {

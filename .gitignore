@@ -7,3 +7,4 @@ dist
 .remote-assets
 components.d.ts
 haven-demo-dist
+.claude
