@@ -6,6 +6,20 @@ info: |
   Swap the schedule, rooms and links for your own Haven's.
 transition: slide-left
 mdc: true
+layout: cover
+variant: center
+kicker: WELCOME TO
+---
+
+# IN YOUR CITY
+
+<!--
+Cover layout, centred variant — as on the official opening deck. Try `variant: left` or `variant: corner`.
+-->
+
+---
+layout: cover
+variant: corner
 ---
 
 # Welcome to Haven!
@@ -14,9 +28,13 @@ Opening ceremony · **Nov 14–15, 2026**
 
 A weekend to make a game with friends, in 200+ cities 🎮
 
-<!--
-Cover layout: forest backdrop, white Haven logo, peeking hedgehog.
--->
+---
+layout: raise-hand
+---
+
+this is
+
+# your first ever hackathon
 
 ---
 layout: intro
@@ -57,6 +75,53 @@ people:
 # Meet the team
 
 ---
+layout: people
+variant: plaques
+people:
+  - name: Daven
+    image: /photos/daven.webp
+  - name: Alex
+  - name: Priya
+  - name: Jordan
+---
+
+# Say hi to the team!
+
+---
+layout: statement
+---
+
+# THE PREMISE
+
+---
+layout: showcase
+image: shirt
+caption: GET THIS SHIRT!
+---
+
+# Make a game & ship it.
+
+---
+layout: steps
+---
+
+# What's "shipping"?
+
+1. Published to **itch.io** as a web-deployed game
+2. Open-source code on **GitHub**
+3. <span class="text-3xl text-haven-orange-deep">Can be played!!!</span>
+
+---
+layout: statement
+---
+
+# THE THEME IS…
+
+---
+layout: reveal
+---
+
+---
 layout: bubbles
 ---
 
@@ -70,12 +135,36 @@ Never made a game? No problem — <mark>we have workshops</mark> all weekend.
 
 ---
 layout: section
-kicker: Part 1
 ---
 
-# The weekend
+# Housekeeping!
 
-What's happening, when, and where to find food
+---
+layout: village
+---
+
+# CODE OF CONDUCT:
+
+1. Treat each other with kindness & respect
+2. <em>Respect the room</em> & environment
+
+Hack Club's Code of Conduct applies HERE at Haven.
+
+[hack.club/conduct](https://hack.club/conduct)
+
+---
+layout: village
+---
+
+# Meal Schedule
+
+Free food, drinks and snacks
+
+| | | |
+| --- | --- | --- |
+| Day 1 | Lunch (1 PM – 1:30 PM) | Pizza |
+| Day 1 | Dinner (6 PM – 6:30 PM) | Tacos |
+| Day 2 | Breakfast (9 AM – 9:30 AM) | Pancakes |
 
 ---
 layout: agenda
@@ -151,11 +240,34 @@ heading: Here's how the weekend works
 
 ---
 layout: statement
+scene: picnic
+align: top
 ---
 
-# Make something real.
+# Schedule & Good Info
 
-Not perfect. Not huge. <mark>Just finished.</mark>
+<div class="flex gap-4 mt-14">
+  <Pill label="View our event schedule">haven.hackclub.com</Pill>
+  <Pill label="Important links">hack.club/hv</Pill>
+</div>
+
+<Pill dark class="mt-2">WiFi: Haven-Guest<br>Password: hedgehogs</Pill>
+
+---
+layout: statement
+align: top
+---
+
+# PEER VOTING
+
+<Pill class="mt-4">The room splits into 2 groups:</Pill>
+
+<div class="flex gap-10 mt-1">
+  <Note title="Group 1:">stays at their tables,<br>presenting their games</Note>
+  <Note title="Group 2:">walks around the venue,<br>playing group 1's games</Note>
+</div>
+
+<Pill class="mt-1">And then switch! <span class="text-haven-carrot">(We'll guide you later)</span></Pill>
 
 ---
 layout: image-right
@@ -316,6 +428,29 @@ sponsors:
 ---
 
 # Thank you!
+
+---
+layout: qr
+url: https://hack.club/vote
+---
+
+# SUBMIT & VOTE
+## for your favorite games
+
+---
+layout: statement
+---
+
+# AND THE WINNERS ARE…
+## (drumroll please…)
+
+---
+layout: winner
+place: 1
+game: Hedgehog Hop
+image: /photos/projects-2.webp
+team: [Alex, Priya, Jordan]
+---
 
 ---
 layout: end

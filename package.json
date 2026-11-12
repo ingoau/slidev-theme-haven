@@ -1,6 +1,6 @@
 {
   "name": "slidev-theme-haven",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Slidev theme for Hack Club Haven",
   "author": "Ingo Wolf (https://github.com/ingoau)",
   "license": "MIT",
@@ -45,10 +45,11 @@
     "defaults": {
       "fonts": {
         "sans": "Jua",
-        "serif": "Darumadrop One",
+        "serif": "Pangolin",
         "mono": "Fira Code",
         "local": [
           "Jua",
+          "Pangolin",
           "Darumadrop One"
         ]
       },
@@ -58,5 +59,8 @@
   "devDependencies": {
     "@slidev/cli": "^53.0.0",
     "playwright-chromium": "^1.64.0"
+  },
+  "dependencies": {
+    "uqr": "^0.1.3"
   }
 }

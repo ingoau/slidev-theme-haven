@@ -2,7 +2,7 @@
 
 .slidev-layout {
   font-family: var(--haven-font-body);
-  color: var(--haven-orange-deep);
+  color: var(--haven-ink);
   font-size: 1.15rem;
   line-height: 1.45;
   padding: 2.5rem 3.5rem;
@@ -18,8 +18,8 @@
 
   h1 { font-size: 2.6rem; line-height: 1; margin-bottom: 1.25rem; }
   h2 { font-size: 1.8rem; line-height: 1.05; margin-bottom: 0.6rem; }
-  h3 { font-size: 1.35rem; line-height: 1.1; margin-bottom: 0.4rem; color: var(--haven-brown-dark); }
-  h4 { font-size: 1.1rem; color: var(--haven-brown-dark); }
+  h3 { font-size: 1.35rem; line-height: 1.1; margin-bottom: 0.4rem; color: var(--haven-orange-deep); }
+  h4 { font-size: 1.1rem; color: var(--haven-tab); }
 
   h1 + p { opacity: 1; }
 
@@ -32,8 +32,8 @@
     border: 0;
   }
 
-  strong { color: var(--haven-orange-bright); font-weight: 400; }
-  em { font-style: normal; color: var(--haven-brown-dark); }
+  strong { color: var(--haven-orange-deep); font-weight: 400; }
+  em { font-style: normal; color: var(--haven-tab); }
 
   ul, ol { margin: 0.5rem 0; padding-left: 0; }
   li { margin: 0.35rem 0; line-height: 1.4; }
@@ -66,7 +66,7 @@
 
   mark, .marker {
     background: var(--haven-yellow);
-    color: var(--haven-orange-deep);
+    color: var(--haven-ink);
     border-radius: 0.45em;
     padding: 0.08em 0.3em;
     box-decoration-break: clone;
@@ -78,15 +78,39 @@
     font-family: var(--haven-font-display);
     font-weight: 400;
     color: white;
-    background: var(--haven-brown-dark);
+    background: var(--haven-tab);
     text-align: left;
     padding: 0.4rem 0.8rem;
   }
   th:first-child { border-top-left-radius: 12px; }
   th:last-child { border-top-right-radius: 12px; }
-  td { padding: 0.4rem 0.8rem; border-bottom: 2px dashed var(--haven-brown-light); }
+  td { padding: 0.4rem 0.8rem; border-bottom: 2px dashed var(--haven-wood); }
 
   hr { border: 0; border-top: 3px dashed var(--haven-brown-light); margin: 1rem 0; }
+}
+
+/* the official decks' big titles: white Jua with a banana-yellow outline and a warm glow */
+.haven-outlined,
+.slidev-layout.cover h1,
+.slidev-layout.statement h1,
+.slidev-layout.fact h1 + p,
+.slidev-layout.fact p,
+.slidev-layout.bubbles h1,
+.slidev-layout.cards h1,
+.slidev-layout.people > h1,
+.slidev-layout.faq > h1,
+.slidev-layout.end h1,
+.slidev-layout.steps > h1,
+.slidev-layout.qr h1,
+.slidev-layout.qr h2,
+.slidev-layout.showcase h1,
+.slidev-layout.showcase h2,
+.haven-countdown-label,
+.slidev-layout.notebook .haven-notebook-title {
+  color: white;
+  -webkit-text-stroke: 0.075em var(--haven-outline);
+  paint-order: stroke fill;
+  text-shadow: 0 0 0.3em rgb(237 86 21 / 0.45), 0 0.04em 0.1em rgb(140 55 26 / 0.3);
 }
 
 /* glowing white display type, as on the site's section headers */
@@ -102,37 +126,50 @@
 
 /* ---------- backdrops ---------- */
 
-.haven-meadow {
-  background:
-    radial-gradient(ellipse 60% 50% at 12% 8%, rgb(255 255 255 / 0.18), transparent 70%),
-    radial-gradient(ellipse 50% 60% at 92% 96%, rgb(151 160 26 / 0.55), transparent 70%),
-    radial-gradient(ellipse 40% 35% at 80% 10%, rgb(255 227 130 / 0.35), transparent 70%),
-    var(--haven-green);
+/* scenes — the official ceremony-deck artwork. Any layout with a `scene` prop accepts these names. */
+.haven-meadow,
+.haven-scene-meadow {
+  background: url('../assets/scenes/meadow.webp') center / cover no-repeat, var(--haven-lime);
 }
-/* scattered butter-yellow flowers, like the clover patches on the site */
-.haven-meadow::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    url('../assets/ui/flower.svg') 3% 92% / 26px no-repeat,
-    url('../assets/ui/flower.svg') 7% 97% / 16px no-repeat,
-    url('../assets/ui/flower.svg') 97% 6% / 22px no-repeat,
-    url('../assets/ui/flower.svg') 93% 3% / 14px no-repeat,
-    url('../assets/ui/flower.svg') 1.5% 8% / 18px no-repeat;
-  opacity: 0.9;
+.haven-scene-flowers {
+  background: url('../assets/scenes/flowers.webp') center / cover no-repeat, var(--haven-lime);
 }
-
-.haven-forest {
-  background: url('../assets/bg/hero-bg.webp') center 30% / cover no-repeat, var(--haven-orange-mid);
+.haven-forest,
+.haven-scene-forest {
+  background: url('../assets/scenes/forest.webp') center / cover no-repeat, var(--haven-orange-mid);
+}
+.haven-scene-path {
+  background: url('../assets/scenes/path.webp') center / cover no-repeat, var(--haven-lime);
+}
+.haven-scene-plaid {
+  background: url('../assets/scenes/plaid.webp') center / cover no-repeat, var(--haven-carrot);
+}
+.haven-scene-picnic {
+  background: url('../assets/scenes/picnic.webp') center / cover no-repeat, var(--haven-lime);
+}
+.haven-scene-team {
+  background: url('../assets/scenes/team.webp') center / cover no-repeat, var(--haven-carrot);
+}
+.haven-scene-village {
+  background: url('../assets/scenes/village.webp') center / cover no-repeat, var(--haven-village);
+}
+.haven-scene-housekeeping {
+  background: url('../assets/scenes/housekeeping.webp') center / cover no-repeat, var(--haven-village);
+}
+.haven-scene-signboard {
+  background: url('../assets/scenes/signboard.webp') center / cover no-repeat, var(--haven-lime);
+}
+.haven-scene-frame {
+  background: url('../assets/scenes/frame.webp') center / cover no-repeat, var(--haven-banana);
+}
+.haven-scene-fire {
+  background: url('../assets/scenes/fire.webp') center / cover no-repeat, #3b0000;
 }
 .haven-path {
   background: url('../assets/bg/bg-middle.webp') center 18% / cover no-repeat, var(--haven-green);
 }
 .haven-picnic {
-  /* zoomed to the blanket: at 16:9 the corner critters would otherwise be cut in half */
-  background: url('../assets/bg/bg-picnic.webp') 50% 40% / 165% auto no-repeat, var(--haven-green);
+  background: url('../assets/scenes/plaid.webp') center / cover no-repeat, var(--haven-carrot);
 }
 .haven-carrots {
   background: url('../assets/bg/faq-bg.webp') center 40% / cover no-repeat, var(--haven-green);
@@ -158,16 +195,15 @@
 
 .haven-board {
   position: relative;
-  background:
-    radial-gradient(ellipse at 30% 0%, rgb(255 255 255 / 0.65), transparent 60%),
-    var(--haven-cream);
-  border: 9px solid var(--haven-brown-light);
-  border-radius: 26px;
+  color: var(--haven-ink);
+  background: var(--haven-peach);
+  border: 14px solid var(--haven-wood);
+  border-radius: 22px;
   box-shadow:
-    0 0 0 3px var(--haven-brown-dark),
-    inset 0 0 0 3px rgb(184 119 74 / 0.35),
-    0 8px 0 3px var(--haven-brown-dark),
-    0 18px 30px rgb(80 50 10 / 0.25);
+    0 0 0 5px white,
+    inset 0 0 0 3px rgb(182 119 76 / 0.35),
+    inset 0 2px 10px rgb(140 55 26 / 0.12),
+    0 12px 26px rgb(80 50 10 / 0.25);
   padding: 2.4rem 2.4rem 1.6rem;
 }
 .haven-board::before,
@@ -180,26 +216,29 @@
   pointer-events: none;
   z-index: 2;
 }
-.haven-board::before { top: -30px; right: -26px; transform: rotate(18deg); }
-.haven-board::after { bottom: -28px; left: -26px; transform: rotate(200deg); }
+.haven-board::before { top: -34px; right: -30px; transform: rotate(18deg); }
+.haven-board::after { bottom: -32px; left: -30px; transform: rotate(200deg); }
 
 /* first heading on a board becomes the brown name plaque */
 .haven-board > h1:first-child,
 .haven-board > .col-left > h1:first-child,
 .haven-board .haven-plaque {
   position: absolute;
-  top: -1.55rem;
-  left: 2rem;
+  top: -2.35rem;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0;
   max-width: calc(100% - 4rem);
-  font-size: 1.9rem;
+  min-width: 40%;
+  text-align: center;
+  font-size: 1.7rem;
   line-height: 1;
   color: white;
-  background: var(--haven-brown-dark);
-  border: 4px solid var(--haven-brown-light);
-  box-shadow: 0 0 0 3px var(--haven-brown-dark), 0 5px 0 2px var(--haven-brown-bark);
-  border-radius: 16px;
-  padding: 0.45rem 1.2rem 0.4rem;
+  background: var(--haven-tab);
+  border: 8px solid var(--haven-wood);
+  box-shadow: 0 0 0 4px white, inset 0 2px 6px rgb(80 30 10 / 0.25), 0 6px 14px rgb(80 50 10 / 0.25);
+  border-radius: 14px;
+  padding: 0.5rem 1.6rem 0.45rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -210,7 +249,7 @@
 
 /* default / center / two-cols / image-*: meadow with a signboard */
 .slidev-layout.haven-shell {
-  padding: 3.1rem 3.2rem 2.6rem;
+  padding: 3.6rem 3.2rem 2.4rem;
   display: flex;
   flex-direction: column;
 }
@@ -227,10 +266,6 @@
   max-width: 80%;
   text-align: center;
   padding: 3rem 3.5rem 2.2rem;
-}
-.slidev-layout.haven-shell.is-center > .haven-board > h1:first-child {
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .haven-board.two-columns {
@@ -251,8 +286,18 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgb(150 50 0 / 0.38), rgb(150 50 0 / 0.08) 55%, transparent 75%);
+  background: linear-gradient(90deg, rgb(150 50 0 / 0.3), rgb(150 50 0 / 0.06) 55%, transparent 75%);
   pointer-events: none;
+}
+/* thin gold rule framing the slide, as on the official title cards */
+.slidev-layout.cover::after,
+.slidev-layout.end::after {
+  content: '';
+  position: absolute;
+  inset: 3% 2% 3% 2%;
+  border: 2px solid rgb(255 214 120 / 0.85);
+  pointer-events: none;
+  z-index: 1;
 }
 .slidev-layout.cover > * { position: relative; z-index: 2; }
 .slidev-layout.cover .haven-logo {
@@ -261,13 +306,41 @@
   filter: drop-shadow(0 3px 10px rgb(120 40 0 / 0.35));
 }
 .slidev-layout.cover h1 {
-  font-size: 3.6rem;
-  line-height: 0.95;
+  font-size: 4rem;
+  line-height: 1;
   margin: 0 0 1rem;
-  max-width: 62%;
-  color: white;
-  text-shadow: 0 0 14px rgb(150 50 0 / 0.55), 0 3px 0 rgb(150 50 0 / 0.25);
+  max-width: 66%;
 }
+/* centred "WELCOME TO [logo] IN YOUR CITY" variant */
+.slidev-layout.cover.is-center {
+  align-items: center;
+  text-align: center;
+}
+.slidev-layout.cover.is-center::before { background: radial-gradient(ellipse 60% 60% at 50% 50%, rgb(150 50 0 / 0.25), transparent 75%); }
+.slidev-layout.cover.is-center .haven-logo { width: 22rem; margin: 0.4rem auto; order: 1; }
+.slidev-layout.cover.is-center h1 { order: 2; max-width: 90%; margin: 0.2rem 0; font-size: 3.6rem; }
+.slidev-layout.cover.is-center .haven-kicker-title { order: 0; }
+.slidev-layout.cover.is-center > :not(.haven-logo, h1, .haven-kicker-title, .haven-peek) { order: 3; max-width: 70%; }
+.slidev-layout.cover .haven-kicker-title {
+  font-family: var(--haven-font-display);
+  font-size: 3.2rem;
+  line-height: 1;
+  color: white;
+  text-shadow: 0 0 14px rgb(150 50 0 / 0.5), 0 3px 0 rgb(150 50 0 / 0.2);
+}
+.slidev-layout.cover.is-center h1 {
+  -webkit-text-stroke: 0;
+  text-shadow: 0 0 14px rgb(150 50 0 / 0.5), 0 3px 0 rgb(150 50 0 / 0.2);
+}
+/* logo in the top-right corner, as on the closing deck */
+.slidev-layout.cover.is-corner .haven-logo {
+  position: absolute;
+  top: 6%;
+  right: 5%;
+  width: 14rem;
+  margin: 0;
+}
+.slidev-layout.cover.is-corner { justify-content: flex-end; padding-bottom: 4rem; }
 .slidev-layout.cover h1 + p,
 .slidev-layout.cover p {
   font-size: 1.3rem;
@@ -286,45 +359,51 @@
   z-index: 2;
 }
 
-/* section: a big signboard planted on the village path */
+/* section: the "Housekeeping!" banner on the village road */
 .slidev-layout.section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
-}
-.slidev-layout.section > .haven-board {
-  min-width: 52%;
-  max-width: 78%;
-  padding: 2rem 3rem 1.6rem;
-}
-.slidev-layout.section .haven-board h1 {
-  position: static;
-  transform: none;
-  font-size: 3.4rem;
-  margin: 0 0 0.4rem;
-  color: var(--haven-orange-bright);
-  background: none;
-  border: 0;
-  box-shadow: none;
   padding: 0;
-  white-space: normal;
-  max-width: none;
 }
-.slidev-layout.section .haven-board p { color: var(--haven-brown-dark); font-size: 1.25rem; }
+.slidev-layout.section .haven-banner {
+  position: absolute;
+  left: 17.6%;
+  right: 17.7%;
+  top: 39.2%;
+  height: 16.7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--haven-bark);
+  border-radius: 10px;
+  color: white;
+  font-family: var(--haven-font-hand);
+}
+.slidev-layout.section .haven-banner h1 {
+  font-family: var(--haven-font-hand);
+  font-size: 3.6rem;
+  line-height: 1;
+  margin: 0;
+  color: white;
+}
+.slidev-layout.section .haven-banner p { margin: 0.2rem 0 0; font-size: 1.3rem; color: var(--haven-sand); }
 .slidev-layout.section .haven-kicker {
-  display: inline-block;
-  font-family: var(--haven-font-display);
-  background: var(--haven-brown-dark);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--haven-font-hand);
+  background: var(--haven-bark);
   color: white;
   border-radius: 999px;
-  padding: 0.15rem 0.9rem;
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
+  padding: 0.15rem 1.1rem;
+  font-size: 1.2rem;
 }
 
-/* statement: white glowing headline framed by the site's sparkle marks */
+/* statement: a big outlined title over the picnic blanket (THE PREMISE, drumroll please…) */
 .slidev-layout.statement {
   display: flex;
   flex-direction: column;
@@ -332,46 +411,35 @@
   justify-content: center;
   text-align: center;
   color: white;
-}
-.slidev-layout.statement h1 {
-  position: relative;
-  font-size: 3.6rem;
-  line-height: 1.02;
-  max-width: 80%;
-  margin: 0 auto 1rem;
-  color: white;
-  text-shadow: 0 0 10px var(--haven-green-deep), 0 0 2px var(--haven-green-deep);
-}
-.slidev-layout.statement h1::after {
-  content: '';
-  position: absolute;
-  left: -24%;
-  right: -24%;
-  top: 50%;
-  transform: translateY(-50%);
-  aspect-ratio: 952 / 248;
-  background: url('../assets/ui/banner-triangles.webp') center / contain no-repeat;
-  pointer-events: none;
-}
-.slidev-layout.statement::before {
-  background:
-    radial-gradient(ellipse 45% 40% at 50% 50%, rgb(255 227 130 / 0.45), transparent 75%),
-    url('../assets/ui/flower.svg') 4% 88% / 34px no-repeat,
-    url('../assets/ui/flower.svg') 9% 96% / 20px no-repeat,
-    url('../assets/ui/flower.svg') 14% 82% / 14px no-repeat,
-    url('../assets/ui/flower.svg') 95% 10% / 30px no-repeat,
-    url('../assets/ui/flower.svg') 89% 5% / 18px no-repeat,
-    url('../assets/ui/flower.svg') 92% 90% / 24px no-repeat,
-    url('../assets/ui/flower.svg') 6% 12% / 22px no-repeat;
+  gap: 0.6rem;
 }
 .slidev-layout.statement > * { position: relative; z-index: 1; }
-.slidev-layout.statement p {
-  font-size: 1.35rem;
+.slidev-layout.statement h1 {
+  font-size: 5.2rem;
+  line-height: 1.08;
+  max-width: 88%;
+  margin: 0 auto;
+}
+.slidev-layout.statement h2 {
+  font-family: var(--haven-font-display);
+  font-size: 3rem;
+  line-height: 1.05;
+  margin: 0;
   color: white;
-  text-shadow: 0 0 8px var(--haven-green-deep);
-  max-width: 70%;
+  -webkit-text-stroke: 0.075em var(--haven-outline);
+  paint-order: stroke fill;
+  text-shadow: 0 0 0.3em rgb(237 86 21 / 0.45);
+}
+.slidev-layout.statement > p {
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0 0 10px rgb(140 55 26 / 0.6);
+  max-width: 72%;
+  margin: 0;
 }
 .slidev-layout.statement mark { text-shadow: none; }
+.slidev-layout.statement.is-top { justify-content: flex-start; padding-top: 2.2rem; }
+.slidev-layout.statement.is-bottom { justify-content: flex-end; padding-bottom: 2rem; }
 
 /* fact: huge yellow number over the forest */
 .slidev-layout.fact {
@@ -399,9 +467,7 @@
 .slidev-layout.fact h1 + p,
 .slidev-layout.fact p {
   font-family: var(--haven-font-display);
-  font-size: 2rem;
-  color: white;
-  text-shadow: 0 0 12px rgb(120 40 0 / 0.7);
+  font-size: 2.2rem;
   margin-top: 0.8rem;
 }
 
@@ -509,8 +575,6 @@
   font-family: var(--haven-font-display);
   font-size: 2.4rem;
   line-height: 1;
-  color: white;
-  text-shadow: 0 0 10px var(--haven-green-deep), 0 0 2px var(--haven-green-deep);
 }
 
 /* bubbles: Daven the hedgehog talks you through it */
@@ -530,9 +594,7 @@
 }
 .slidev-layout.bubbles > * { position: relative; z-index: 2; }
 .slidev-layout.bubbles h1 {
-  color: white;
-  text-shadow: 0 0 10px var(--haven-yellow), 0 0 3px var(--haven-orange-deep);
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   margin-bottom: 0.6rem;
 }
 .slidev-layout.bubbles > p,
@@ -579,10 +641,8 @@
   align-items: center;
 }
 .slidev-layout.cards h1 {
-  color: white;
   text-align: center;
-  font-size: 2.3rem;
-  text-shadow: 0 0 10px var(--haven-orange-deep), 0 2px 0 var(--haven-orange-deep);
+  font-size: 2.8rem;
   margin-bottom: 1.2rem;
 }
 .slidev-layout.cards h1 + p {
@@ -616,11 +676,9 @@
   color: white;
 }
 .slidev-layout.end h1 {
-  font-size: 4.6rem;
-  line-height: 0.95;
+  font-size: 4.8rem;
+  line-height: 1;
   margin: 0 0 0.5rem;
-  color: white;
-  text-shadow: 0 0 14px var(--haven-orange-deep), 0 4px 0 rgb(150 50 0 / 0.35);
 }
 .slidev-layout.end p {
   font-size: 1.3rem;
@@ -660,11 +718,9 @@
 /* shared: white glowing title for layouts that sit straight on the meadow */
 .slidev-layout.people > h1,
 .slidev-layout.faq > h1 {
-  color: white;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 0.4rem;
-  text-shadow: 0 0 10px var(--glow), 0 0 2px var(--glow);
 }
 .slidev-layout.people > h1 + p,
 .slidev-layout.faq > h1 + p {
@@ -769,8 +825,7 @@
 .slidev-layout.countdown > * { position: relative; }
 .haven-countdown-label {
   font-family: var(--haven-font-display);
-  font-size: 2rem;
-  text-shadow: 0 0 12px rgb(120 40 0 / 0.7);
+  font-size: 2.6rem;
 }
 .haven-countdown { display: flex; gap: 1.2rem; margin: 0.6rem 0 0.8rem; }
 .haven-countdown-unit {
@@ -866,3 +921,329 @@
   color: var(--haven-orange-deep);
   padding: 0.6rem 1.2rem 0.8rem;
 }
+
+/* ---------- layouts from the official ceremony decks ---------- */
+
+/* raise-hand: the wooden signboard with its name tab */
+.slidev-layout.raise-hand { padding: 0; color: var(--haven-ink); }
+.haven-raise-label {
+  position: absolute;
+  left: 25.4%;
+  right: 26%;
+  top: 10.6%;
+  height: 8.2%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+.haven-raise-body {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 21%;
+  bottom: 17%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.haven-raise-body p { font-size: 2.5rem; line-height: 1.1; margin: 0; }
+.haven-raise-body h1 { font-size: 3.9rem; line-height: 1.15; margin: 0; color: var(--haven-ink); }
+.haven-raise-body h2 { font-size: 2.8rem; line-height: 1.15; margin: 0; color: var(--haven-ink); }
+.haven-raise-peek { position: absolute; bottom: 0; width: 18%; pointer-events: none; }
+.haven-raise-peek.is-left { left: 0; }
+.haven-raise-peek.is-right { right: 0; transform: scaleX(-1); }
+.haven-raise-cheer { position: absolute; right: 2%; bottom: 0; width: 16%; pointer-events: none; }
+
+/* village: housekeeping card, hand-lettered in Pangolin */
+.slidev-layout.village { padding: 0; }
+.haven-village-card {
+  position: absolute;
+  left: 17.65%;
+  right: 17.65%;
+  top: 24.5%;
+  min-height: 58.8%;
+  max-height: 72%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem 2.6rem 1.6rem;
+  background: var(--haven-bark);
+  border-radius: 34px;
+  color: white;
+  font-family: var(--haven-font-hand);
+  font-size: 1.35rem;
+  line-height: 1.35;
+  text-align: center;
+}
+.haven-village-card.is-wide { left: 10%; right: 10%; top: 21%; max-height: 74%; }
+.haven-village-card.is-left { align-items: stretch; text-align: left; }
+.haven-village-card.is-left > h1 { text-align: center; }
+.haven-village-card h1 {
+  font-family: var(--haven-font-hand);
+  font-size: 2.9rem;
+  line-height: 1.05;
+  margin: 0 0 0.6rem;
+  color: white;
+}
+.haven-village-card h2, .haven-village-card h3 { font-family: var(--haven-font-hand); color: var(--haven-sand); }
+.haven-village-card p { margin: 0.35rem 0; }
+.haven-village-card h1 + p { margin-top: -0.2rem; }
+.haven-village-card strong { color: var(--haven-sand); }
+.haven-village-card em { color: var(--haven-yellow); }
+.haven-village-card a { color: var(--haven-sand); text-decoration: underline; text-decoration-color: var(--haven-sand); }
+.haven-village-card :is(ul, ol) { text-align: left; align-self: stretch; margin: 0.4rem 1rem; }
+.haven-village-card ul > li { padding-left: 1.7rem; }
+.haven-village-card ul > li::before { content: '↪'; background: none; width: auto; height: auto; top: 0; color: var(--haven-sand); }
+.haven-village-card ol > li::marker { font-family: var(--haven-font-hand); color: white; }
+.haven-village-card table {
+  width: 100%;
+  margin-top: 0.6rem;
+  border-collapse: collapse;
+  font-size: 1.25rem;
+  color: var(--haven-ink);
+}
+.haven-village-card table :is(th, td) {
+  background: var(--haven-sand);
+  border: 1.5px solid var(--haven-ink);
+  padding: 0.35rem 0.8rem;
+  font-family: var(--haven-font-hand);
+  font-weight: 400;
+  color: var(--haven-ink);
+  text-align: left;
+  border-radius: 0;
+}
+/* markdown tables need a header row; leave it empty to get the official header-less look */
+.haven-village-card table thead:has(th:empty:only-child, th:empty + th:empty) { display: none; }
+.haven-village-card table thead tr:has(> th:empty:first-child):not(:has(> th:not(:empty))) { display: none; }
+.haven-village-card table td:last-child:not(:first-child) { text-align: center; }
+
+/* winner: the watercolour frame */
+.slidev-layout.winner { padding: 0; }
+.haven-winner {
+  position: absolute;
+  left: 13.5%;
+  right: 13.5%;
+  top: 14%;
+  bottom: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  color: var(--haven-ink);
+  font-family: var(--haven-font-hand);
+  text-align: center;
+}
+.haven-winner-title {
+  font-family: var(--haven-font-hand) !important;
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0 !important;
+  color: var(--haven-ink);
+}
+.haven-winner-place { color: inherit; }
+.haven-winner-shot {
+  width: 46%;
+  aspect-ratio: 444 / 260;
+  object-fit: cover;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgb(140 55 26 / 0.2);
+}
+.haven-winner-team { font-size: 1.9rem; line-height: 1.1; }
+.haven-winner-extra:empty { display: none; }
+.haven-winner-extra { font-size: 1.2rem; }
+
+/* reveal: the flaming hedgehog */
+.slidev-layout.reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 6rem;
+  color: white;
+}
+.haven-reveal-text {
+  font-family: 'Comic Sans MS', 'Comic Neue', 'Chalkboard SE', var(--haven-font-body);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 4.3rem;
+  line-height: 1.1;
+  color: white !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 0.07em !important;
+  text-underline-offset: 0.12em !important;
+  text-shadow: 0 2px 12px rgb(60 0 0 / 0.55);
+  border: 0 !important;
+}
+.haven-reveal-body { margin-top: 1rem; font-size: 1.4rem; text-shadow: 0 2px 10px rgb(60 0 0 / 0.7); }
+
+/* qr: title, QR code, link pill */
+.slidev-layout.qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.6rem 3rem 1.4rem;
+  text-align: center;
+}
+.haven-qr-head h1 { font-size: 4.6rem; line-height: 1; margin: 0; }
+.haven-qr-head h2 { font-size: 3rem; line-height: 1.05; margin: 0.1rem 0 0; }
+.haven-qr-head p { color: white; font-size: 1.4rem; text-shadow: 0 0 10px rgb(140 55 26 / 0.6); margin: 0.2rem 0 0; }
+.haven-qr-card {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: 1;
+  max-height: 15rem;
+  margin-top: 1rem;
+  padding: 1.1rem;
+  background: white;
+  display: grid;
+  place-items: center;
+}
+.haven-qr-card > * { width: 100%; height: 100%; }
+.haven-qr-card img { object-fit: contain; }
+.haven-qr-pill {
+  margin-top: -0.4rem;
+  position: relative;
+  min-width: 22rem;
+  padding: 0.55rem 2.4rem 0.5rem;
+  background: var(--haven-ink);
+  color: white !important;
+  border: 4px solid white;
+  border-radius: 22px;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  text-decoration: none !important;
+}
+
+/* steps: orange number circles + white cards */
+.slidev-layout.steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.4rem 4rem 2rem;
+}
+.slidev-layout.steps > h1 { font-size: 4.6rem; line-height: 1.05; margin: 0 0 0.8rem; text-align: center; }
+.slidev-layout.steps > h1 + p { color: white; font-size: 1.4rem; text-shadow: 0 0 10px rgb(80 90 0 / 0.6); margin: -0.6rem 0 0.6rem; }
+.slidev-layout.steps > ol {
+  flex: 1;
+  width: 80%;
+  margin: 0;
+  padding: 0 0 0 6.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  counter-reset: haven-step;
+  list-style: none;
+}
+.slidev-layout.steps > ol > li {
+  position: relative;
+  counter-increment: haven-step;
+  display: block;
+  margin: 0.35rem 0;
+  padding: 1.6rem 1.6rem;
+  background: white;
+  border-radius: 22px;
+  color: var(--haven-ink);
+  font-size: 1.55rem;
+  line-height: 1.2;
+  text-align: center;
+}
+.slidev-layout.steps > ol > li::marker { content: none; }
+.slidev-layout.steps > ol > li::before {
+  content: counter(haven-step);
+  position: absolute;
+  left: -6.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--haven-orange-deep);
+  display: grid;
+  place-items: center;
+  font-family: var(--haven-font-display);
+  font-size: 3rem;
+  color: white;
+  -webkit-text-stroke: 0.08em var(--haven-outline);
+  paint-order: stroke fill;
+}
+.slidev-layout.steps > ol > li strong { color: var(--haven-orange-deep); }
+
+/* showcase: outlined text + a free-standing image */
+.slidev-layout.showcase {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 3rem;
+}
+.slidev-layout.showcase.is-reverse { grid-template-columns: 1.1fr 0.9fr; }
+.slidev-layout.showcase.is-reverse .haven-showcase-figure { order: -1; }
+.haven-showcase-text { text-align: center; }
+.haven-showcase-text h1 { font-size: 4rem; line-height: 1.2; margin: 0; }
+.haven-showcase-text h2 { font-size: 2.8rem; line-height: 1.15; margin: 0.6rem 0 0; }
+.haven-showcase-text p { color: white; font-size: 1.5rem; text-shadow: 0 0 10px rgb(80 90 0 / 0.6); }
+.haven-showcase-figure { margin: 0; display: flex; flex-direction: column; align-items: center; }
+.haven-showcase-figure img { max-width: 100%; max-height: 23rem; object-fit: contain; filter: drop-shadow(0 10px 18px rgb(60 70 0 / 0.25)); }
+.haven-showcase-figure figcaption {
+  font-family: var(--haven-font-display);
+  font-size: 3.2rem;
+  line-height: 1;
+  margin-top: 0.4rem;
+  color: white;
+  -webkit-text-stroke: 0.075em var(--haven-outline);
+  paint-order: stroke fill;
+  text-shadow: 0 0 0.3em rgb(237 86 21 / 0.45);
+}
+
+/* people → plaques variant ("Say hi to the team!") */
+.slidev-layout.people.is-plaques { padding: 2rem 3.2rem 1.4rem; }
+.slidev-layout.people.heading-bottom > h1 { order: 2; font-size: 5rem; line-height: 1.05; margin: 0.6rem 0 0; }
+.slidev-layout.people.heading-bottom > h1 + p { order: 3; }
+.haven-plaque-grid {
+  flex: 1;
+  display: grid;
+  gap: 1.2rem 2.2rem;
+  align-content: center;
+  justify-items: center;
+}
+.haven-plaque-person { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 11rem; }
+.haven-plaque-name {
+  width: 100%;
+  background: white;
+  color: var(--haven-orange-deep);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem 0.25rem;
+  margin-bottom: 1.4rem;
+  font-size: 1.45rem;
+  line-height: 1.1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.haven-plaque-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #ececec;
+}
+.haven-plaque-photo.is-empty {
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  color: #c8c8c8;
+}
+.haven-plaque-role {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 0 0 6px rgb(140 55 26 / 0.8);
+}
+.slidev-layout.people.heading-bottom .haven-plaque-name { margin-bottom: 1.4rem; }

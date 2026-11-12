@@ -4,17 +4,20 @@
 > This theme was generated with AI (Claude), directed and reviewed by a human.
 
 A cosy autumn-forest [Slidev](https://sli.dev) theme for **Hack Club Haven** game jams, built from
-[haven.hackclub.com](https://haven.hackclub.com/) and the official Haven Brand Guide.
+the official Haven opening & closing ceremony decks, [haven.hackclub.com](https://haven.hackclub.com/)
+and the Haven Brand Guide.
 
 ![Cover layout](docs/screenshots/cover.webp)
 
-- **Type:** Darumadrop One for headings, Jua for body text (the brand guide's fonts), bundled
-  so decks work offline
-- **Palette:** the brand guide's official colours, plus a few supporting shades from the site
-- **Motifs:** wooden signboards with leaf corners, name plaques, speech bubbles, yellow
-  highlighter, orange picnic cards, the spiral notebook, and Daven the hedgehog peeking in
-- **21 layouts** covering a whole event: openers, agendas, people, workshops, FAQs, a live
-  countdown, sponsor walls and a send-off
+- **Type:** Jua everywhere, with the official decks' white-with-yellow-outline titles, and
+  Pangolin for the hand-lettered housekeeping slides — all bundled so decks work offline.
+  Darumadrop One (brand guide) is still available as `font-brand` / `--haven-font-brand`.
+- **Artwork:** the official ceremony-deck scenes — autumn forest, picnic blanket, village board,
+  wooden signboard, winner frame, the flaming hedgehog — plus the site's art
+- **Palette:** the brand guide's colours plus the decks' ink brown `#8C371A` and outline yellow
+- **27 layouts** covering both ceremonies and everything between: openers, "raise your hand if…",
+  the premise and theme reveal, shipping steps, housekeeping cards, agendas, people, FAQs, a live
+  countdown, QR codes for voting, winners, sponsor walls and a send-off
 
 > Community-made for Haven organisers — not an official Hack Club project.
 
@@ -46,13 +49,46 @@ npm install && npm run dev
 Grouped roughly in the order you'd use them in a deck. Every layout name below is what goes in
 `layout:`; the screenshots come straight from the demo deck.
 
+### Scenes
+
+Most full-bleed layouts take `scene:` to swap their backdrop for any of the official artworks:
+`meadow`, `flowers`, `forest`, `path`, `plaid`, `picnic`, `team`, `village`, `housekeeping`,
+`signboard`, `frame`, `fire`. `background:` still takes any colour or image url.
+
 ### Openers
 
 #### `cover`
-Autumn forest, Haven logo, hedgehog peeking in.
-Frontmatter: `logo: white | orange | watercolor | false`, `hedgehog: false`, `background`.
+Autumn forest with the gold frame from the official title cards.
+Frontmatter: `variant: left | center | corner`, `kicker` (line above the logo in the centred
+variant), `logo: white | orange | watercolor | false`, `hedgehog`, `background`.
+
+```yaml
+layout: cover
+variant: center
+kicker: WELCOME TO
+---
+# IN YOUR CITY
+```
 
 ![cover](docs/screenshots/cover.webp)
+
+![cover, corner variant](docs/screenshots/cover-corner.webp)
+
+#### `raise-hand`
+The official "Raise your hand if…" signboard. A paragraph is the small lead-in, the heading the
+big line. Frontmatter: `label` (tab text), `hedgehog: peek | cheer | both | none`.
+
+```md
+---
+layout: raise-hand
+---
+
+this was
+
+# your first ever hackathon
+```
+
+![raise-hand](docs/screenshots/raise-hand.webp)
 
 #### `intro`
 Speaker card with a round avatar. Frontmatter: `avatar` (defaults to Daven).
@@ -75,6 +111,11 @@ people:
 
 ![people](docs/screenshots/people.webp)
 
+`variant: plaques` gives the official "Say hi to the team!" look — name plaques over square
+photos on the picnic blanket, with the title underneath (`heading: top` moves it back up).
+
+![people, plaques variant](docs/screenshots/people-plaques.webp)
+
 #### `bubbles`
 Forest + hedgehog; every paragraph or list item becomes a speech bubble.
 Frontmatter: `background`, `hedgehog: false`.
@@ -84,14 +125,38 @@ Frontmatter: `background`, `hedgehog: false`.
 ### Structure & emphasis
 
 #### `section`
-A big signboard on the village-path map. Frontmatter: `kicker`, `background`.
+The "Housekeeping!" banner on the village road. Frontmatter: `kicker`, `background`.
 
 ![section](docs/screenshots/section.webp)
 
 #### `statement`
-Glowing white headline framed by the site's sparkle marks. Frontmatter: `background`.
+A huge outlined title over the picnic blanket — THE PREMISE, THE THEME IS…, drumroll please.
+An `## h2` becomes a smaller outlined line; anything else is centred underneath, which makes it
+the place for `<Pill>`s and `<Note>`s. Frontmatter: `scene` (default `plaid`),
+`align: center | top | bottom`, `background`.
 
 ![statement](docs/screenshots/statement.webp)
+
+![statement with pills](docs/screenshots/statement-info.webp)
+
+![statement with notes](docs/screenshots/statement-voting.webp)
+
+#### `reveal`
+The flaming hedgehog. Frontmatter: `text` (default "(click here to reveal)"), `href`.
+
+![reveal](docs/screenshots/reveal.webp)
+
+#### `steps`
+An ordered list as orange number circles and white cards — "What's shipping?".
+Frontmatter: `scene` (default `flowers`).
+
+![steps](docs/screenshots/steps.webp)
+
+#### `showcase`
+Outlined text beside a free-standing image, like the "GET THIS SHIRT!" slide. Frontmatter:
+`image` (`shirt` for the bundled Haven tee), `caption`, `reverse`, `scene`.
+
+![showcase](docs/screenshots/showcase.webp)
 
 #### `fact`
 A huge butter-yellow number over the forest. Frontmatter: `background`.
@@ -132,6 +197,30 @@ A small centred signboard — good for a single question or a reveal.
 ![center](docs/screenshots/center.webp)
 
 ### Event logistics
+
+#### `village`
+The housekeeping card: a brown card on the village board, hand-lettered in Pangolin — code of
+conduct, safety, meals, workshops, AI policy. `**bold**` is pale yellow; markdown tables get the
+official yellow cells (leave the header row empty to hide it). Frontmatter: `wide`,
+`align: center | left`.
+
+```md
+---
+layout: village
+---
+
+# Meal Schedule
+
+Free food, drinks and snacks
+
+| | | |
+| --- | --- | --- |
+| Day 1 | Lunch (1 PM – 1:30 PM) | Pizza |
+```
+
+![village](docs/screenshots/village.webp)
+
+![village with a table](docs/screenshots/village-table.webp)
 
 #### `agenda`
 A timeline on a signboard. `now: true` highlights the current item; more than 6 items split into
@@ -180,6 +269,36 @@ done: Pencils down! 🎉
 
 ### Closers
 
+#### `qr`
+Big title, a generated QR code and the link in a brown pill — "SUBMIT & VOTE". Frontmatter:
+`url` (required), `label` (defaults to the url without `https://`), `qr` (your own image instead),
+`scene` (default `path`).
+
+```md
+---
+layout: qr
+url: https://hack.club/vote
+---
+
+# SUBMIT & VOTE
+## for your favorite games
+```
+
+![qr](docs/screenshots/qr.webp)
+
+#### `winner`
+A winner in the watercolour frame. Frontmatter: `place`, `game`, `image`, `team` (string or list).
+
+```yaml
+layout: winner
+place: 1
+game: Hedgehog Hop
+image: /winners/hedgehog-hop.png
+team: [Alex, Priya, Jordan]
+```
+
+![winner](docs/screenshots/winner.webp)
+
 #### `sponsors`
 A thank-you wall grouped by tier (in the order tiers first appear; earlier tiers get bigger
 tiles). `logo` and `url` are optional — without a logo the name is shown.
@@ -213,6 +332,9 @@ Forest + excited hedgehog. Frontmatter: `background`, `hedgehog: false`.
 <Polaroid src="/photos/x.webp" caption="hi" tilt="-3" max-height="10rem" />
 <Sticker tilt="-4">new!</Sticker>
 <Daven variant="peek|excited|thumbs|pixel" bottom="0" right="40px" width="160px" flip />
+<Pill label="Important links">hack.club/hv</Pill>   <Pill dark>WiFi: …</Pill>
+<Note title="Group 1:">stays at their tables</Note>
+<QrCode value="https://hack.club/vote" size="10rem" />
 ```
 
 > `==mark==` syntax isn't enabled in Slidev by default — use `<mark>`.
@@ -248,8 +370,9 @@ From the Haven Brand Guide's social media guidelines:
 - Slidev 53.0.0's own CSS breaks the CSS minifier during `slidev build`. The theme ships a
   [vite.config.ts](vite.config.ts) that turns CSS minification off, which Slidev applies to your
   deck too, so builds work out of the box.
-- The demo deck is a generic Haven opening ceremony; its schedule, people and sponsors are
+- The demo deck is a generic Haven ceremony; its schedule, people and sponsors are
   placeholders.
+- `title` is reserved by Slidev in slide frontmatter, which is why `winner` uses `game`.
 - Regenerate the screenshots with `npm run screenshot` (needs `npx playwright install chromium`).
 
 ## Credits & licence
@@ -257,8 +380,11 @@ From the Haven Brand Guide's social media guidelines:
 - Theme code: [MIT](LICENSE).
 - Haven artwork, logos and Daven the hedgehog: © [Hack Club](https://hackclub.com), from
   haven.hackclub.com and the Haven Brand Guide, included so organisers can make on-brand decks.
-- Fonts: [Darumadrop One](https://github.com/ManiackersDesign/darumadrop) and
-  [Jua](https://fonts.google.com/specimen/Jua), both under the SIL Open Font License 1.1
-  (see `fonts/`).
+- Ceremony-deck artwork (scenes, stickers, the Haven tee): © Hack Club, from the official Haven
+  opening & closing ceremony templates.
+- Fonts: [Jua](https://fonts.google.com/specimen/Jua),
+  [Pangolin](https://fonts.google.com/specimen/Pangolin) and
+  [Darumadrop One](https://github.com/ManiackersDesign/darumadrop), all under the SIL Open Font
+  License 1.1 (see `fonts/`).
 - Demo photos in `public/photos` are from haven.hackclub.com and are not included in the npm
   package.

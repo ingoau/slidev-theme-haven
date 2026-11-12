@@ -14,10 +14,10 @@
   box-shadow: 0 6px 0 var(--haven-orange-deep), 0 14px 26px rgb(120 40 0 / 0.25);
 }
 .haven-card.is-cream {
-  background: var(--haven-cream);
-  border-color: var(--haven-brown-light);
-  color: var(--haven-orange-deep);
-  box-shadow: 0 0 0 3px var(--haven-brown-dark), 0 6px 0 3px var(--haven-brown-dark);
+  background: var(--haven-peach);
+  border-color: var(--haven-wood);
+  color: var(--haven-ink);
+  box-shadow: 0 0 0 4px white, 0 10px 20px rgb(80 50 10 / 0.2);
 }
 .haven-card.is-green {
   background: var(--haven-green-deep);
@@ -101,7 +101,7 @@
   font-family: var(--haven-font-display);
   font-size: 1.75rem;
   line-height: 1.05;
-  color: var(--haven-brown-dark);
+  color: var(--haven-ink);
 }
 .haven-step-body { font-size: 1.15rem; line-height: 1.35; }
 .haven-step-body p { margin: 0; }
@@ -180,10 +180,10 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: var(--haven-cream);
-  border: 6px solid var(--haven-brown-light);
-  border-radius: 22px;
-  box-shadow: 0 0 0 3px var(--haven-brown-dark), 0 6px 0 3px var(--haven-brown-dark), 0 14px 24px rgb(80 50 10 / 0.2);
+  background: var(--haven-peach);
+  border: 9px solid var(--haven-wood);
+  border-radius: 20px;
+  box-shadow: 0 0 0 4px white, inset 0 0 0 2px rgb(182 119 76 / 0.35), 0 12px 22px rgb(80 50 10 / 0.22);
   padding: 4.7rem 1rem 1.1rem;
   margin-top: 4.1rem;
 }
@@ -197,7 +197,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid white;
-  box-shadow: 0 0 0 3px var(--haven-brown-dark), 0 6px 12px rgb(80 50 10 / 0.25);
+  box-shadow: 0 0 0 4px var(--haven-wood), 0 6px 12px rgb(80 50 10 / 0.25);
   background: var(--haven-butter);
 }
 .haven-person-avatar.is-initials {
@@ -224,13 +224,55 @@
 .haven-person-role {
   margin-top: 0.35rem;
   font-size: 0.95rem;
-  color: var(--haven-brown-dark);
+  color: var(--haven-ink);
 }
 .haven-person-desc {
   margin-top: 0.45rem;
   font-size: 0.95rem;
   line-height: 1.3;
-  color: var(--haven-orange-deep);
+  color: var(--haven-ink);
 }
 .haven-person-desc:empty { display: none; }
 .haven-person-desc p { margin: 0; }
+
+/* <QrCode> */
+.haven-qrcode { display: inline-block; line-height: 0; }
+.haven-qrcode svg { width: 100%; height: 100%; display: block; }
+
+/* <Pill> — white info box from the official "Schedule & Good Info" slide */
+.haven-pill {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--haven-ink);
+  border-radius: 22px;
+  padding: 0.6rem 1.6rem 0.65rem;
+  font-size: 1.45rem;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: none;
+}
+.haven-pill-label { color: var(--haven-ink); }
+.haven-pill-label + .haven-pill-body { color: var(--haven-carrot); font-size: 1.8rem; }
+.haven-pill-body p { margin: 0; }
+.haven-pill.is-dark { background: var(--haven-ink); color: white; }
+.haven-pill.is-dark .haven-pill-label { color: white; }
+
+/* <Note> — pale-yellow box with a brown rule, from the peer-voting slide */
+.haven-note {
+  display: inline-block;
+  background: #f8eca9;
+  border: 2px solid var(--haven-ink);
+  color: var(--haven-ink);
+  padding: 0.5rem 1.1rem;
+  font-family: var(--haven-font-hand);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  text-align: center;
+  text-shadow: none;
+  box-shadow: 0 3px 6px rgb(140 55 26 / 0.2);
+}
+.haven-note-title { color: var(--haven-ink); margin-right: 0.3rem; }
+.haven-note p { margin: 0; }

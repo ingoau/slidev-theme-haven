@@ -28,8 +28,24 @@
   --haven-cream: #fff6e6;
   --haven-paper: #ffe6cc;         /* notebook pages */
 
-  --haven-font-display: 'Darumadrop One', 'Jua', ui-rounded, system-ui, sans-serif;
+  /* from the official opening / closing ceremony decks */
+  --haven-ink: #8c371a;           /* body text on every official slide */
+  --haven-outline: #ffd059;       /* outline on the big white Jua titles */
+  --haven-sand: #f9eeac;          /* table cells on the village slides */
+  --haven-bark: #b05d30;          /* housekeeping card */
+  --haven-village: #ffefb4;       /* village backdrop cream */
+  --haven-peach: #ffdbb8;         /* signboard inside */
+  --haven-wood: #d58f5e;          /* signboard frame */
+  --haven-tab: #b6774c;           /* signboard name tab */
+  --haven-frame: #c66320;         /* winner frame */
+  --haven-lemon: #ffeb87;         /* winner card */
+
+  /* the official decks set everything in Jua, with Pangolin for the hand-lettered
+     housekeeping slides; Darumadrop One (brand guide) stays available as --haven-font-brand */
+  --haven-font-display: 'Jua', ui-rounded, system-ui, sans-serif;
   --haven-font-body: 'Jua', ui-rounded, system-ui, sans-serif;
+  --haven-font-hand: 'Pangolin', 'Jua', ui-rounded, system-ui, sans-serif;
+  --haven-font-brand: 'Darumadrop One', 'Jua', ui-rounded, system-ui, sans-serif;
 
   --slidev-theme-primary: var(--haven-orange-bright);
   --slidev-code-background: var(--haven-cream);

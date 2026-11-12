@@ -17,3 +17,12 @@ export function backgroundStyle(background?: string): CSSProperties {
     background: `url("${resolveAssetUrl(background)}") center / cover no-repeat`,
   }
 }
+
+/** Official ceremony-deck backdrops, usable as `scene:` on most layouts */
+export const scenes = ['meadow', 'flowers', 'forest', 'path', 'plaid', 'picnic', 'team', 'village', 'housekeeping', 'signboard', 'frame', 'fire'] as const
+
+/** Class for a `scene:` frontmatter value, falling back to the layout's own default */
+export function sceneClass(scene: string | undefined, fallback: string) {
+  const s = scene && (scenes as readonly string[]).includes(scene) ? scene : fallback
+  return `haven-scene-${s}`
+}

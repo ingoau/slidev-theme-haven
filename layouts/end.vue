@@ -12,7 +12,7 @@ const style = computed(() => backgroundStyle(props.background))
 </script>
 
 <template>
-  <div class="slidev-layout end haven-forest haven-canopy" :style="style">
+  <div class="slidev-layout end haven-forest" :style="style">
     <slot />
     <img v-if="props.hedgehog" :src="excited" class="haven-mascot" alt="">
   </div>
