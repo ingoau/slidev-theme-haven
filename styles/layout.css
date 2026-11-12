@@ -1247,3 +1247,122 @@
   text-shadow: 0 0 6px rgb(140 55 26 / 0.8);
 }
 .slidev-layout.people.heading-bottom .haven-plaque-name { margin-bottom: 1.4rem; }
+
+/* ---------- village mode: info layouts on the housekeeping card (scene: village, the default) ---------- */
+
+.haven-contents { display: contents; }
+
+.slidev-layout.is-village { padding: 0; }
+.slidev-layout.is-village > .haven-board {
+  position: absolute;
+  left: 9.5%;
+  right: 9.5%;
+  top: 22.5%;
+  bottom: 7.5%;
+  display: flex;
+  flex-direction: column;
+  background: var(--haven-bark);
+  border: 0;
+  border-radius: 34px;
+  box-shadow: none;
+  color: white;
+  font-size: 1.05rem;
+  padding: 1rem 2.2rem 1.2rem;
+  overflow: hidden;
+}
+.slidev-layout.is-village > .haven-board::before,
+.slidev-layout.is-village > .haven-board::after { display: none; }
+.slidev-layout.is-village.is-center > .haven-board {
+  left: 17.65%;
+  right: 17.65%;
+  bottom: 16.7%;
+  justify-content: center;
+  align-items: center;
+  max-width: none;
+  padding: 1.2rem 2.6rem;
+}
+
+/* the first heading becomes the hand-lettered card title */
+.slidev-layout.is-village .haven-board > h1:first-child,
+.slidev-layout.is-village .haven-board > .col-left > h1:first-child,
+.slidev-layout.is-village .haven-board .haven-plaque {
+  position: static;
+  transform: none;
+  min-width: 0;
+  max-width: none;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  text-align: center;
+  font-family: var(--haven-font-hand);
+  font-size: 2.4rem;
+  line-height: 1.15;
+  color: white;
+  white-space: normal;
+  overflow: visible;
+}
+.slidev-layout.is-village > .haven-board > * { flex-shrink: 0; }
+.slidev-layout.is-village .haven-board.two-columns { display: grid; padding-top: 4.2rem; }
+.slidev-layout.is-village .haven-board.two-columns:not(:has(> .col-left > h1:first-child)) { padding-top: 1.4rem; }
+.slidev-layout.is-village .haven-board > .col-left > h1:first-child {
+  position: absolute;
+  top: 0.9rem;
+  left: 0;
+  right: 0;
+}
+
+.slidev-layout.is-village .haven-board :is(h2, h3, h4) { color: var(--haven-sand); }
+.slidev-layout.is-village .haven-board strong { color: var(--haven-sand); }
+.slidev-layout.is-village .haven-board em { color: var(--haven-yellow); }
+.slidev-layout.is-village .haven-board a { color: var(--haven-sand); text-decoration-color: var(--haven-yellow); }
+.slidev-layout.is-village .haven-board ol > li::marker { color: var(--haven-sand); }
+.slidev-layout.is-village .haven-board hr { border-top-color: rgb(249 238 172 / 0.5); }
+.slidev-layout.is-village .haven-board blockquote { background: rgb(255 255 255 / 0.12); color: white; border-left-color: var(--haven-yellow); }
+.slidev-layout.is-village .haven-board table { border-collapse: collapse; color: var(--haven-ink); }
+.slidev-layout.is-village .haven-board th {
+  background: var(--haven-ink);
+  color: white;
+  border: 1.5px solid var(--haven-ink);
+  border-radius: 0;
+}
+.slidev-layout.is-village .haven-board td {
+  background: var(--haven-sand);
+  color: var(--haven-ink);
+  border: 1.5px solid var(--haven-ink);
+}
+.slidev-layout.is-village .haven-board td :is(strong, a) { color: var(--haven-orange-deep); }
+.slidev-layout.is-village .haven-board .slidev-code-wrapper,
+.slidev-layout.is-village .haven-board pre { border-radius: 14px; }
+.slidev-layout.is-village .haven-board .haven-bubble { color: var(--haven-ink); }
+.slidev-layout.is-village .haven-board .haven-bubble strong { color: var(--haven-orange-deep); }
+
+/* agenda on the card */
+.is-village .haven-agenda { margin-top: 0.2rem; flex: 1; align-content: center; }
+.is-village .haven-agenda li { padding-bottom: 0.4rem; }
+.is-village .haven-agenda li::after { border-left-color: rgb(249 238 172 / 0.55); }
+.is-village .haven-agenda-time { color: var(--haven-yellow); font-size: 1.35rem; }
+.is-village .haven-agenda-dot { background: var(--haven-bark); border-color: var(--haven-sand); }
+.is-village .haven-agenda-title { color: white; font-size: 1.3rem; }
+.is-village .haven-agenda-note { color: var(--haven-sand); font-size: 0.95rem; }
+.is-village .haven-agenda li.is-now .haven-agenda-dot { background: var(--haven-yellow); border-color: white; box-shadow: 0 0 0 4px rgb(255 208 89 / 0.4); }
+.is-village .haven-agenda li.is-now .haven-agenda-title { color: var(--haven-ink); }
+.is-village .haven-agenda-now { background: var(--haven-yellow); color: var(--haven-ink); }
+
+/* faq on the card */
+.slidev-layout.faq.is-village .haven-faq { gap: 0.8rem 1.2rem; }
+.slidev-layout.faq.is-village .haven-faq-item { box-shadow: none; border-radius: 14px; background: var(--haven-sand); }
+.slidev-layout.faq.is-village .haven-faq-q { background: var(--haven-ink); font-size: 1.15rem; padding: 0.4rem 1rem; }
+.slidev-layout.faq.is-village .haven-faq-a { color: var(--haven-ink); font-size: 0.98rem; padding: 0.45rem 1rem 0.6rem; }
+.slidev-layout.faq.is-village .haven-board > h1:first-child { -webkit-text-stroke: 0; text-shadow: none; }
+
+/* sponsors on the card */
+.is-village .haven-sponsors { flex: 1; justify-content: center; gap: 0.5rem; margin-top: 0; }
+.is-village .haven-sponsor-tier-name { background: var(--haven-sand); color: var(--haven-ink); }
+.is-village .haven-sponsor { border-color: var(--haven-sand); box-shadow: none; color: var(--haven-ink); }
+.is-village .is-lg .haven-sponsor { width: 13rem; height: 4.2rem; font-size: 1.5rem; }
+.is-village .is-md .haven-sponsor { width: 10rem; height: 3.2rem; font-size: 1.15rem; }
+.is-village .is-sm .haven-sponsor { width: 8rem; height: 2.6rem; font-size: 0.95rem; padding: 0.3rem 0.6rem; }
+.is-village .haven-sponsor-tier-name { margin-bottom: 0.35rem; }
+.slidev-layout.sponsors.is-village .haven-board > h1:first-child { margin-bottom: 0.2rem; }

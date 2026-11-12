@@ -363,7 +363,7 @@ layout: two-cols
 <Bubble tail="left" class="mt-2">Grab <mark>any organiser</mark>, or ask in <strong class="whitespace-nowrap">#haven-help</strong> on Slack.</Bubble>
 
 <div class="mt-7 px-10">
-  <Polaroid src="/photos/friends-1.webp" tilt="-3" max-height="9.5rem" caption="your new friends, probably" />
+  <Polaroid src="/photos/friends-1.webp" tilt="-3" max-height="7rem" caption="your new friends, probably" />
 </div>
 
 ---

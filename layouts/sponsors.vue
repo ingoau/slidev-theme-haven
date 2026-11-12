@@ -20,6 +20,7 @@ import { resolveAssetUrl } from '../layoutHelper'
 interface Sponsor { name: string, logo?: string, tier?: string, url?: string }
 
 const props = defineProps({
+  scene: { type: String, default: 'village' },
   sponsors: { type: Array as () => Sponsor[], default: () => [] },
 })
 
@@ -33,10 +34,11 @@ const tiers = computed(() => {
   }
   return [...map.entries()].map(([tier, list], i) => ({ tier, list, size: i === 0 ? 'lg' : i === 1 ? 'md' : 'sm' }))
 })
+const sceneCls = computed(() => props.scene === 'village' ? 'haven-scene-village is-village' : `haven-scene-${props.scene}`)
 </script>
 
 <template>
-  <div class="slidev-layout sponsors haven-shell haven-meadow">
+  <div class="slidev-layout sponsors haven-shell" :class="sceneCls">
     <div class="haven-board">
       <slot />
       <div class="haven-sponsors">

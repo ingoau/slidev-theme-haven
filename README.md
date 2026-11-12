@@ -55,6 +55,13 @@ Most full-bleed layouts take `scene:` to swap their backdrop for any of the offi
 `meadow`, `flowers`, `forest`, `path`, `plaid`, `picnic`, `team`, `village`, `housekeeping`,
 `signboard`, `frame`, `fire`. `background:` still takes any colour or image url.
 
+### Village mode
+
+The text-heavy layouts — `default`, `two-cols`, `center`, `agenda`, `faq` and `sponsors` — sit on
+the official village backdrop with the brown housekeeping card, like the info slides in the
+ceremony decks: the first `# h1` becomes the hand-lettered card title, text is cream, tables get
+the yellow cells. Pass `scene: meadow` (or any other scene) to get the wooden signboard instead.
+
 ### Openers
 
 #### `cover`
@@ -172,15 +179,15 @@ Frontmatter: `background`, `hedgehog: false`.
 ### Everyday content
 
 #### `default`
-Meadow with a cream signboard. The first `# h1` becomes the brown name plaque. Tables, lists and
-code blocks are all styled to match.
+The village card (see *Village mode*). With `scene: meadow` it's a wooden signboard whose first
+`# h1` becomes the name tab. Tables, lists and code blocks are styled to match either way.
 
 ![default](docs/screenshots/default.webp)
 
 ![default with code](docs/screenshots/code.webp)
 
 #### `two-cols`
-Signboard split in two (`::right::`).
+The card split in two (`::right::`). Takes `scene` like `default`.
 
 ![two-cols](docs/screenshots/two-cols.webp)
 
@@ -192,7 +199,7 @@ Signboard plus a taped polaroid. Frontmatter: `image`, `caption`, `tilt`.
 ![image-left](docs/screenshots/image-left.webp)
 
 #### `center`
-A small centred signboard — good for a single question or a reveal.
+A smaller centred card — good for a single question or a reveal. Takes `scene` like `default`.
 
 ![center](docs/screenshots/center.webp)
 
@@ -223,8 +230,8 @@ Free food, drinks and snacks
 ![village with a table](docs/screenshots/village-table.webp)
 
 #### `agenda`
-A timeline on a signboard. `now: true` highlights the current item; more than 6 items split into
-two columns (override with `columns`).
+A timeline on the village card. `now: true` highlights the current item; more than 6 items split into
+two columns (override with `columns`). Takes `scene`.
 
 ```yaml
 layout: agenda
@@ -250,7 +257,7 @@ Orange picnic-blanket backdrop for `<HavenCard>` grids. Frontmatter: `background
 
 #### `faq`
 Question cards in the style of the site's FAQ. Frontmatter: `faqs` (list of `q`/`a`), `columns`
-(default 2), `background`.
+(default 2), `scene`, `background`.
 
 ![faq](docs/screenshots/faq.webp)
 
@@ -301,7 +308,7 @@ team: [Alex, Priya, Jordan]
 
 #### `sponsors`
 A thank-you wall grouped by tier (in the order tiers first appear; earlier tiers get bigger
-tiles). `logo` and `url` are optional — without a logo the name is shown.
+tiles). `logo` and `url` are optional — without a logo the name is shown. Takes `scene`.
 
 ```yaml
 layout: sponsors

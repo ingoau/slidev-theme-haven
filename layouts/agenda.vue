@@ -20,16 +20,18 @@ import { computed } from 'vue'
 interface Item { time?: string, title: string, note?: string, now?: boolean }
 
 const props = defineProps({
+  scene: { type: String, default: 'village' },
   items: { type: Array as () => Item[], default: () => [] },
   columns: { type: [Number, String] },
 })
 
 const cols = computed(() => Number(props.columns ?? (props.items.length > 6 ? 2 : 1)))
 const rows = computed(() => Math.ceil(props.items.length / cols.value))
+const sceneCls = computed(() => props.scene === 'village' ? 'haven-scene-village is-village' : `haven-scene-${props.scene}`)
 </script>
 
 <template>
-  <div class="slidev-layout agenda haven-shell haven-meadow">
+  <div class="slidev-layout agenda haven-shell" :class="sceneCls">
     <div class="haven-board">
       <slot />
       <ol class="haven-agenda" :style="{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`, gridTemplateRows: `repeat(${rows}, auto)` }">
