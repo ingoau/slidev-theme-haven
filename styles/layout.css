@@ -884,7 +884,9 @@
   color: var(--haven-brown-dark);
   text-decoration: none !important;
 }
-.haven-sponsor img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.haven-sponsor { overflow: hidden; }
+/* explicit size: percentage max-sizes don't resolve inside the tile's grid cell */
+.haven-sponsor img { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; }
 .is-lg .haven-sponsor { width: 15rem; height: 6rem; font-size: 1.7rem; }
 .is-md .haven-sponsor { width: 11rem; height: 4.4rem; font-size: 1.3rem; }
 .is-sm .haven-sponsor { width: 8.5rem; height: 3.4rem; font-size: 1rem; }
