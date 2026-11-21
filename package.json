@@ -62,5 +62,8 @@
   },
   "dependencies": {
     "uqr": "^0.1.3"
+  },
+  "overrides": {
+    "image-size": "^2.0.3"
   }
 }
